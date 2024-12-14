@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Sahifa</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        video {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            display: none; /* Foydalanuvchi tugmani bosmaguncha ko'rsatilmaydi */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">Tugmani bosing</h1>
+    <button id="playButton" onclick="playVideo()">Click</button>
+
+    <video id="myVideo" autoplay loop>
+        <source src="video/IMG_1275.mp4" type="video/mp4">
+        Sizning brauzeringiz video formatini qo'llab-quvvatlamaydi.
+    </video>
+
+    <script>
+        function playVideo() {
+            const video = document.getElementById('myVideo');
+            const title = document.getElementById('title');
+            const button = document.getElementById('playButton');
+
+            // Tugma va sarlavhani yashirish
+            title.style.display = "none";
+            button.style.display = "none";
+
+            // Videoni ko'rsatish va o'ynatishni boshlash
+            video.style.display = "block";
+            video.play();
+        }
+    </script>
+
+</body>
+</html>
